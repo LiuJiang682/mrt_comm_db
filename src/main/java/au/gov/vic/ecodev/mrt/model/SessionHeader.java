@@ -3,12 +3,16 @@ package au.gov.vic.ecodev.mrt.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import au.gov.vic.ecodev.mrt.model.fields.SessionStatus;
 
+@Entity
 public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.model.Entity, Serializable {
 
 	/**
@@ -19,6 +23,7 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	private static final String NOT_SENT = "N";
 	private static final String EMPTY = "";
 	
+	@Id
 	private long sessionId;
 	private String fileName;
 	private String template;
