@@ -3,8 +3,10 @@ package au.gov.vic.ecodev.mrt.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -13,6 +15,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import au.gov.vic.ecodev.mrt.model.fields.SessionStatus;
 
 @Entity
+@Table(schema="TLOADER", name="SESSION_HEADER")
 public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.model.Entity, Serializable {
 
 	/**
@@ -24,16 +27,27 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	private static final String EMPTY = "";
 	
 	@Id
+	@Column(name="ID")
 	private long sessionId;
+	@Column(name="FILE_NAME")
 	private String fileName;
+	@Column(name="TEMPLATE")
 	private String template;
+	@Column(name="PROCESS_DATE")
 	private Date processDate;
+	@Column(name="TENEMENT")
 	private String tenement;
+	@Column(name="TENEMENT_HOLDER")
 	private String tenementHolder;
+	@Column(name="REPORTING_DATE")
 	private Date reportingDate;
+	@Column(name="PROJECT_NAME")
 	private String projectName;
+	@Column(name="STATUS")
 	private String status;
+	@Column(name="COMMENTS")
 	private String comments;
+	@Column(name="EMAIL_SENT")
 	private String emailSent;
 	
 	public SessionHeader() {	
