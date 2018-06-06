@@ -1,6 +1,7 @@
 package au.gov.vic.ecodev.mrt.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -49,6 +50,12 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	private String comments;
 	@Column(name="EMAIL_SENT")
 	private String emailSent;
+	@Column(name="APPROVED")
+	private int approved;
+	@Column(name="REJECTED")
+	private int rejected;
+	@Column(name="CREATED")
+	private Timestamp created;
 	
 	public SessionHeader() {	
 	}
@@ -65,6 +72,8 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 		status = SessionStatus.RUNNING.name();
 		comments = EMPTY;
 		emailSent = NOT_SENT;
+		approved = 0;
+		rejected = 0;
 	}
 
 	public String getFileName() {
@@ -158,7 +167,31 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	public void setSessionId(final long sessionId) {
 		this.sessionId = sessionId;
 	}
-	
+
+	public int getApproved() {
+		return approved;
+	}
+
+	public void setApproved(int approved) {
+		this.approved = approved;
+	}
+
+	public int getRejected() {
+		return rejected;
+	}
+
+	public void setRejected(int rejected) {
+		this.rejected = rejected;
+	}
+
+	public Timestamp getCreated() {
+		return created;
+	}
+
+	public void setCreated(Timestamp created) {
+		this.created = created;
+	}
+
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);
