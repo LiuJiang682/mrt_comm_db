@@ -135,10 +135,6 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	public SessionStatus getStatus() {
 		return SessionStatus.valueOf(status);
 	}
-
-	public void setStatus(SessionStatus status) {
-		this.status = status.name();
-	}
 	
 	public void setStatus(String status) {
 		this.status = status;
