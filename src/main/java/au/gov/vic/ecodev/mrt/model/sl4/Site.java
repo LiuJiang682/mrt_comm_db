@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -15,6 +16,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @Entity
 @Table(schema="TLOADER", name="LOC_SITE")
+@IdClass(SiteKey.class)
 public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Entity, Serializable {
 
 	/**
@@ -27,6 +29,7 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	@Id
 	@Column(name="LOADER_ID")
 	private long loaderId;
+	@Id
 	@Column(name="SITE_ID")
 	private String siteId;
 	@Column(name="GSV_SITE_ID")
