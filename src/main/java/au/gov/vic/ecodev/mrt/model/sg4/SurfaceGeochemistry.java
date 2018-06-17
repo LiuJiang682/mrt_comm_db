@@ -34,6 +34,8 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	private BigDecimal northing;
 	@Column(name="SAMPLE_TYPE")
 	private String sampleType;
+	@Column(name="AMG_ZONE")
+	private BigDecimal amgZone;
 	
 	public long getId() {
 		return id;
@@ -70,6 +72,12 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	}
 	public void setSampleType(String sampleType) {
 		this.sampleType = sampleType;
+	}
+	public BigDecimal getAmgZone() {
+		return amgZone;
+	}
+	public void setAmgZone(BigDecimal amgZone) {
+		this.amgZone = amgZone;
 	}
 	@Override
 	public int hashCode() {
