@@ -6,7 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-//import au.gov.vic.ecodev.mrt.constants.Constants.Numeral;
+import au.gov.vic.ecodev.mrt.api.constants.Constants.Numeral;
 import au.gov.vic.ecodev.mrt.dao.rowmapper.SessionHeaderRowMapper;
 import au.gov.vic.ecodev.mrt.model.SessionHeader;
 import au.gov.vic.ecodev.mrt.template.processor.model.Entity;
@@ -23,10 +23,6 @@ public class SessionHeaderDaoImpl implements SessionHeaderDao {
 	private static final String INSERT_SQL = "INSERT INTO SESSION_HEADER(ID, TEMPLATE, FILE_NAME, PROCESS_DATE, TENEMENT, TENEMENT_HOLDER, REPORTING_DATE, PROJECT_NAME, STATUS, COMMENTS, EMAIL_SENT, APPROVED, REJECTED) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 	private static final String COUNT_SQL = "SELECT COUNT(ID) FROM SESSION_HEADER WHERE ID = ?";
-	
-	private static final int ONE = 1;
-	
-	private static final int ZERO = 0;
 
 
 	@Autowired
@@ -36,14 +32,14 @@ public class SessionHeaderDaoImpl implements SessionHeaderDao {
 	public boolean updateOrSave(Entity entity) {
 		SessionHeader sessionHeader = (SessionHeader) entity;
 		int count = jdbcTemplate.queryForObject(COUNT_SQL, Integer.class, sessionHeader.getSessionId());
-		if (ZERO == count) {
+		if (Numeral.ZERO == count) {
 			int rows = jdbcTemplate.update(INSERT_SQL, new Object[] { sessionHeader.getSessionId(),
 					sessionHeader.getTemplate(), sessionHeader.getFileName(), sessionHeader.getProcessDate(), 
 					sessionHeader.getTenement(), sessionHeader.getTenementHolder(), sessionHeader.getReportingDate(), 
 					sessionHeader.getProjectName(), sessionHeader.getStatus().name(),
 					sessionHeader.getComments(), sessionHeader.getEmailSent(), sessionHeader.getApproved(), 
 					sessionHeader.getRejected()});
-			return ONE == rows;
+			return Numeral.ONE == rows;
 		} else {
 			int rows = jdbcTemplate.update(UPDATE_SQL, new Object[] { sessionHeader.getTemplate(),
 					sessionHeader.getFileName(),sessionHeader.getProcessDate(), sessionHeader.getTenement(), 
@@ -52,7 +48,7 @@ public class SessionHeaderDaoImpl implements SessionHeaderDao {
 					sessionHeader.getStatus().name(), sessionHeader.getComments(), 
 					sessionHeader.getEmailSent(), sessionHeader.getApproved(), 
 					sessionHeader.getRejected(), sessionHeader.getSessionId() });
-			return ONE == rows;
+			return Numeral.ONE == rows;
 		}
 	}
 

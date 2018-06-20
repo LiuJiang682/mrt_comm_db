@@ -13,6 +13,8 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import au.gov.vic.ecodev.mrt.api.constants.Constants.Numeral;
+
 
 @Entity
 @Table(schema="TLOADER", name="LOC_SITE")
@@ -23,8 +25,6 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	 * Generated serial version UID
 	 */
 	private static final long serialVersionUID = -673653681493365648L;
-	
-	private static final int NEGATIVE_ONE = -1;
 
 	@Id
 	@Column(name="LOADER_ID")
@@ -63,7 +63,7 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	@Column(name="VERTICAL_DATUM")
 	private String veritcalDatum;
 	@Column(name="NUM_DATA_RECORDS")
-	private int numberOfDataRecord = NEGATIVE_ONE;
+	private int numberOfDataRecord = Numeral.NEGATIVE_ONE;
 	
 	
 	public long getLoaderId() {

@@ -13,6 +13,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import au.gov.vic.ecodev.mrt.api.constants.Constants.Strings;
 import au.gov.vic.ecodev.mrt.model.fields.SessionStatus;
 
 @Entity
@@ -25,7 +26,6 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	private static final long serialVersionUID = -988540627996071390L;
 	
 	private static final String NOT_SENT = "N";
-	private static final String EMPTY = "";
 	
 	@Id
 	@Column(name="ID")
@@ -62,15 +62,15 @@ public class SessionHeader implements au.gov.vic.ecodev.mrt.template.processor.m
 	
 	public SessionHeader(final long sessionId) {
 		this.sessionId = sessionId;
-		template = EMPTY;
-		fileName = EMPTY;
+		template = Strings.EMPTY;
+		fileName = Strings.EMPTY;
 		processDate = new Date();
-		tenement = EMPTY;
-		tenementHolder = EMPTY;
+		tenement = Strings.EMPTY;
+		tenementHolder = Strings.EMPTY;
 		reportingDate = new Date();
-		projectName = EMPTY;
+		projectName = Strings.EMPTY;
 		status = SessionStatus.RUNNING.name();
-		comments = EMPTY;
+		comments = Strings.EMPTY;
 		emailSent = NOT_SENT;
 		approved = 0;
 		rejected = 0;
