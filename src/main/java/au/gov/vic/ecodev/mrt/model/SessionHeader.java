@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import au.gov.vic.ecodev.mrt.api.constants.Constants.Strings;
+import au.gov.vic.ecodev.mrt.common.db.Constants.Strings;
 import au.gov.vic.ecodev.mrt.model.fields.SessionStatus;
 
 @Entity
