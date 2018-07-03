@@ -64,7 +64,8 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	private String veritcalDatum;
 	@Column(name="NUM_DATA_RECORDS")
 	private int numberOfDataRecord = Numeral.NEGATIVE_ONE;
-	
+	@Column(name="ISSUE_COLUMN_INDEX")
+	private int issueColumnIndex = Numeral.NEGATIVE_ONE;
 	
 	public long getLoaderId() {
 		return loaderId;
@@ -175,6 +176,12 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 		this.numberOfDataRecord = numberOfDataRecord;
 	}
 	
+	public int getIssueColumnIndex() {
+		return issueColumnIndex;
+	}
+	public void setIssueColumnIndex(int issueColumnIndex) {
+		this.issueColumnIndex = issueColumnIndex;
+	}
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);

@@ -36,6 +36,8 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	private String sampleType;
 	@Column(name="AMG_ZONE")
 	private BigDecimal amgZone;
+	@Column(name="ISSUE_COLUMN_INDEX")
+	private int issueColumnIndex;
 	
 	public long getId() {
 		return id;
@@ -78,6 +80,12 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	}
 	public void setAmgZone(BigDecimal amgZone) {
 		this.amgZone = amgZone;
+	}
+	public int getIssueColumnIndex() {
+		return issueColumnIndex;
+	}
+	public void setIssueColumnIndex(int issueColumnIndex) {
+		this.issueColumnIndex = issueColumnIndex;
 	}
 	@Override
 	public int hashCode() {
