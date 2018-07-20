@@ -45,5 +45,5 @@ public class TemplateConfigDaoImpl implements TemplateConfigDao {
 		}
 		return templateEmailProperties;
 	}
-
+	
 }
