@@ -66,6 +66,22 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	private int numberOfDataRecord = Numeral.NEGATIVE_ONE;
 	@Column(name="ISSUE_COLUMN_INDEX")
 	private int issueColumnIndex = Numeral.NEGATIVE_ONE;
+	@Column(name="UWI")
+	private String uwi;
+	@Column(name="LOCN_NAME")
+	private String localName;
+	@Column(name="LOCN_DESC")
+	private String localDescription;
+	@Column(name="STATE")
+	private String state;
+	@Column(name="BORE_DIAMETER")
+	private BigDecimal boreDiameter;
+	@Column(name="TD")
+	private BigDecimal td;
+	@Column(name="TVD")
+	private BigDecimal tvd;
+	@Column(name="DEPTH_DATUM")
+	private String depthDatum;
 	
 	public long getLoaderId() {
 		return loaderId;
@@ -181,6 +197,54 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	}
 	public void setIssueColumnIndex(int issueColumnIndex) {
 		this.issueColumnIndex = issueColumnIndex;
+	}
+	public String getUwi() {
+		return uwi;
+	}
+	public void setUwi(String uwi) {
+		this.uwi = uwi;
+	}
+	public String getLocalName() {
+		return localName;
+	}
+	public void setLocalName(String localName) {
+		this.localName = localName;
+	}
+	public String getLocalDescription() {
+		return localDescription;
+	}
+	public void setLocalDescription(String localDescription) {
+		this.localDescription = localDescription;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public BigDecimal getBoreDiameter() {
+		return boreDiameter;
+	}
+	public void setBoreDiameter(BigDecimal boreDiameter) {
+		this.boreDiameter = boreDiameter;
+	}
+	public BigDecimal getTd() {
+		return td;
+	}
+	public void setTd(BigDecimal td) {
+		this.td = td;
+	}
+	public BigDecimal getTvd() {
+		return tvd;
+	}
+	public void setTvd(BigDecimal tvd) {
+		this.tvd = tvd;
+	}
+	public String getDepthDatum() {
+		return depthDatum;
+	}
+	public void setDepthDatum(String depthDatum) {
+		this.depthDatum = depthDatum;
 	}
 	@Override
 	public int hashCode() {
