@@ -74,6 +74,8 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	private String localDescription;
 	@Column(name="STATE")
 	private String state;
+	@Column(name="KB")
+	private BigDecimal kb;
 	@Column(name="BORE_DIAMETER")
 	private BigDecimal boreDiameter;
 	@Column(name="TD")
@@ -221,6 +223,12 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	}
 	public void setState(String state) {
 		this.state = state;
+	}
+	public BigDecimal getKb() {
+		return kb;
+	}
+	public void setKb(BigDecimal kb) {
+		this.kb = kb;
 	}
 	public BigDecimal getBoreDiameter() {
 		return boreDiameter;
