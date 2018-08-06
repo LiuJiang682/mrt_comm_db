@@ -64,6 +64,8 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	private String veritcalDatum;
 	@Column(name="NUM_DATA_RECORDS")
 	private int numberOfDataRecord = Numeral.NEGATIVE_ONE;
+	@Column(name="FILE_NAME")
+	private String fileName;
 	@Column(name="ISSUE_COLUMN_INDEX")
 	private int issueColumnIndex = Numeral.NEGATIVE_ONE;
 	@Column(name="UWI")
@@ -194,6 +196,12 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 		this.numberOfDataRecord = numberOfDataRecord;
 	}
 	
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 	public int getIssueColumnIndex() {
 		return issueColumnIndex;
 	}
