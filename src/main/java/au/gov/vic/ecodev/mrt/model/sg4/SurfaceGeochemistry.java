@@ -30,6 +30,8 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	private String sampleId;
 	@Column(name="FILE_NAME")
 	private String fileName;
+	@Column(name="ROW_NUMBER")
+	private String rowNumber;
 	@Column(name="EASTING")
 	private BigDecimal easting;
 	@Column(name="NORTHING")
@@ -64,6 +66,12 @@ public class SurfaceGeochemistry implements au.gov.vic.ecodev.mrt.template.proce
 	}
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+	public String getRowNumber() {
+		return rowNumber;
+	}
+	public void setRowNumber(String rowNumber) {
+		this.rowNumber = rowNumber;
 	}
 	public BigDecimal getEasting() {
 		return easting;

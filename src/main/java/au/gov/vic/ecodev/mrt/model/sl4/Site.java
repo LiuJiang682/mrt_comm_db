@@ -34,6 +34,8 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	private String siteId;
 	@Column(name="GSV_SITE_ID")
 	private long gsvSiteId;
+	@Column(name="ROW_NUMBER")
+	private String rowNumber;
 	@Column(name="PARISH")
 	private String parish;
 	@Column(name="PROSPECT")
@@ -104,6 +106,12 @@ public class Site implements au.gov.vic.ecodev.mrt.template.processor.model.Enti
 	}
 	public void setGsvSiteId(long gsvSiteId) {
 		this.gsvSiteId = gsvSiteId;
+	}
+	public String getRowNumber() {
+		return rowNumber;
+	}
+	public void setRowNumber(String rowNumber) {
+		this.rowNumber = rowNumber;
 	}
 	public String getParish() {
 		return parish;
