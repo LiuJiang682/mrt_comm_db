@@ -29,6 +29,8 @@ public class SampleMeta implements Entity, Serializable {
 	private long siteId;
 	@Column(name="SAMPLE_ID")
 	private long sampleId;
+	@Column(name="FILE_NAME")
+	private String fileName;
 	@Column(name="CORE_ID")
 	private long coreId;
 	@Column(name="LAB_CODE")
@@ -84,6 +86,14 @@ public class SampleMeta implements Entity, Serializable {
 
 	public void setSampleId(long sampleId) {
 		this.sampleId = sampleId;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public long getCoreId() {

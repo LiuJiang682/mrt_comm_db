@@ -1,6 +1,7 @@
 package au.gov.vic.ecodev.mrt.model.vgp.hydro;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -12,38 +13,40 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import au.gov.vic.ecodev.mrt.template.processor.model.Entity;
 
-public class SampleAnalysis implements Entity, Serializable {
+public class Observation implements Entity, Serializable {
 
 	/**
-	 * Generate serial version UID
+	 * Generated serial version UID
 	 */
-	private static final long serialVersionUID = -8742668609558133384L;
+	private static final long serialVersionUID = -9168177113688805004L;
 
 	@Id
 	@Column(name="ID")
 	private long id;
 	@Column(name="LOADER_ID")
 	private long loaderId;
+	@Column(name="SITE_ID")
+	private long siteId;
 	@Column(name="SAMPLE_ID")
 	private long sampleId;
 	@Column(name="FILE_NAME")
 	private String fileName;
 	@Column(name="IGSN")
 	private String igsn;
-	@Column(name="LAB_SAMP_NO")
-	private String labSampleNo;
-	@Column(name="ANAL_DATE")
-	private Timestamp analysisDate;
+	@Column(name="OCCUR_TIME")
+	private Timestamp occurTime;
 	@Column(name="PARAM")
 	private String parameter;
-	@Column(name="UOM")
-	private String uom;
+	@Column(name="DEPTH_FROM")
+	private BigDecimal depthFrom;
+	@Column(name="DEPTH_TO")
+	private BigDecimal depthTo;
 	@Column(name="RESULT")
 	private String result;
-	@Column(name="ANAL_METH")
-	private String ananlysisMethod;
-	@Column(name="LOR")
-	private String lor;
+	@Column(name="OBSERVER")
+	private String observer;
+	@Column(name="TYPE")
+	private String type;
 	
 	public long getId() {
 		return id;
@@ -56,6 +59,12 @@ public class SampleAnalysis implements Entity, Serializable {
 	}
 	public void setLoaderId(long loaderId) {
 		this.loaderId = loaderId;
+	}
+	public long getSiteId() {
+		return siteId;
+	}
+	public void setSiteId(long siteId) {
+		this.siteId = siteId;
 	}
 	public long getSampleId() {
 		return sampleId;
@@ -75,17 +84,11 @@ public class SampleAnalysis implements Entity, Serializable {
 	public void setIgsn(String igsn) {
 		this.igsn = igsn;
 	}
-	public String getLabSampleNo() {
-		return labSampleNo;
+	public Timestamp getOccurTime() {
+		return occurTime;
 	}
-	public void setLabSampleNo(String labSampleNo) {
-		this.labSampleNo = labSampleNo;
-	}
-	public Timestamp getAnalysisDate() {
-		return analysisDate;
-	}
-	public void setAnalysisDate(Timestamp analysisDate) {
-		this.analysisDate = analysisDate;
+	public void setOccurTime(Timestamp occurTime) {
+		this.occurTime = occurTime;
 	}
 	public String getParameter() {
 		return parameter;
@@ -93,11 +96,17 @@ public class SampleAnalysis implements Entity, Serializable {
 	public void setParameter(String parameter) {
 		this.parameter = parameter;
 	}
-	public String getUom() {
-		return uom;
+	public BigDecimal getDepthFrom() {
+		return depthFrom;
 	}
-	public void setUom(String uom) {
-		this.uom = uom;
+	public void setDepthFrom(BigDecimal depthFrom) {
+		this.depthFrom = depthFrom;
+	}
+	public BigDecimal getDepthTo() {
+		return depthTo;
+	}
+	public void setDepthTo(BigDecimal depthTo) {
+		this.depthTo = depthTo;
 	}
 	public String getResult() {
 		return result;
@@ -105,18 +114,19 @@ public class SampleAnalysis implements Entity, Serializable {
 	public void setResult(String result) {
 		this.result = result;
 	}
-	public String getAnanlysisMethod() {
-		return ananlysisMethod;
+	public String getObserver() {
+		return observer;
 	}
-	public void setAnanlysisMethod(String ananlysisMethod) {
-		this.ananlysisMethod = ananlysisMethod;
+	public void setObserver(String observer) {
+		this.observer = observer;
 	}
-	public String getLor() {
-		return lor;
+	public String getType() {
+		return type;
 	}
-	public void setLor(String lor) {
-		this.lor = lor;
+	public void setType(String type) {
+		this.type = type;
 	}
+	
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);
