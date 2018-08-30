@@ -31,6 +31,8 @@ public class SampleMeta implements Entity, Serializable {
 	private long sampleId;
 	@Column(name="FILE_NAME")
 	private String fileName;
+	@Column(name="ROW_NUMBER")
+	private String rowNumber;
 	@Column(name="CORE_ID")
 	private long coreId;
 	@Column(name="LAB_CODE")
@@ -94,6 +96,14 @@ public class SampleMeta implements Entity, Serializable {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	public String getRowNumber() {
+		return rowNumber;
+	}
+
+	public void setRowNumber(String rowNumber) {
+		this.rowNumber = rowNumber;
 	}
 
 	public long getCoreId() {

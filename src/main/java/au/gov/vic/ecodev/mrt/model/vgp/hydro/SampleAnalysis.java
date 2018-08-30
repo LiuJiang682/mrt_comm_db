@@ -28,6 +28,8 @@ public class SampleAnalysis implements Entity, Serializable {
 	private long sampleId;
 	@Column(name="FILE_NAME")
 	private String fileName;
+	@Column(name="ROW_NUMBER")
+	private String rowNumber;
 	@Column(name="IGSN")
 	private String igsn;
 	@Column(name="LAB_SAMP_NO")
@@ -68,6 +70,12 @@ public class SampleAnalysis implements Entity, Serializable {
 	}
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+	public String getRowNumber() {
+		return rowNumber;
+	}
+	public void setRowNumber(String rowNumber) {
+		this.rowNumber = rowNumber;
 	}
 	public String getIgsn() {
 		return igsn;
